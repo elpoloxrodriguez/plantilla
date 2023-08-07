@@ -1,0 +1,155 @@
+<h3 mat-dialog-title>Asistente para configurar productos</h3>
+<div mat-dialog-content>
+
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Productos</ng-template>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Los productos definen el formato del contenido que forma la estructura de la carga digital</p>
+          </div>
+        </div>
+        <div class="row">   
+          <div class="col-md-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Producto</mat-label>
+              <mat-select formControlName="firstCtrl" required value="Crédito">
+                <mat-option value="Crédito">CREDITOS</mat-option>
+                <mat-option value="Otros">OTROS</mat-option>
+              </mat-select>
+              <!-- <mat-icon matSuffix>briefcase</mat-icon> -->
+
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Versión</mat-label>
+              <input matInput placeholder="Nueva clave" value="SOE-### (03-18)">
+              <mat-icon matSuffix>tag</mat-icon>
+
+            </mat-form-field>
+          </div>
+          <!-- <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="firstCtrl" placeholder="Last name, First name" required>
+        </mat-form-field> -->
+        </div>
+        <div align="end">
+          <br>
+          <button mat-stroked-button color="basic" matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" >
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Subproductos</ng-template>
+        <div class="row">
+          <div class="col-md-12">
+            <p></p>
+          </div>
+        </div>
+        <div class="row">   
+          <div class="col-md-4">
+            <mat-form-field appearance="outline">
+              <mat-label>Sub Producto</mat-label>
+              <mat-select formControlName="secondCtrl" required value="Crédito">
+                <mat-option value="Crédito">CREDITO CARTERIZADO</mat-option>
+                <mat-option value="Otros">OTROS</mat-option>
+              </mat-select>
+              <!-- <mat-icon matSuffix>briefcase</mat-icon> -->
+
+            </mat-form-field>
+          </div>
+          <div class="col-md-8">
+            <mat-form-field appearance="outline">
+            <mat-label>Grupo / Tipología</mat-label>
+            <mat-select  [formControl]="tipologias" multiple [(ngModel)]="grupos">
+              <mat-option value="DOCUMENTOS FINANCIEROS DEL DEUDOR">DOCUMENTOS FINANCIEROS DEL DEUDOR</mat-option>
+              <mat-option value="DOCUMENTOS  JURÍDICOS DEL DEUDOR">DOCUMENTOS  JURÍDICOS DEL DEUDOR</mat-option>
+              <mat-option value="ACTAS MINUTAS Y DOCUMENTO DE CRÉDITO">ACTAS MINUTAS Y DOCUMENTO DE CRÉDITO</mat-option>
+              <mat-option value="INFORMACIÓN COMPLEMENTARIA">INFORMACIÓN COMPLEMENTARIA</mat-option>
+              <mat-option value="INFORMACIÓN INTERNA">INFORMACIÓN INTERNA</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+          <!-- <mat-form-field appearance="outline"> DOCUMENTOS FINANCIEROS DEL DEUDOR, DOCUMENTOS  JURÍDICOS DEL DEUDOR
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="firstCtrl" placeholder="Last name, First name" required>
+        </mat-form-field> -->
+        </div>
+
+          <!-- <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required> -->
+       
+        <div align="end">
+          <br>
+          <button mat-flat-button color="basic" matStepperPrevious>Anterior</button>
+          <button mat-stroked-button color="basic" matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Finalizado</ng-template>
+      
+
+											
+       
+          
+
+        
+
+        <div class="row">
+          
+          <div class="col-md-1"></div>
+          <div class="col-md-5 text-right">
+            Producto ID<br>
+            Fecha  <br>
+            Versión del producto  <br>
+            Sub Producto<br>
+          </div>
+          <div class="col-md-5">
+            CREDITO<br>
+            01/09/2022 09:00 a.m<br>
+            SEO-### (03-18)<br>
+            CREDITO CARTERIZADO<br>
+          </div>
+          <div class="col-md-1"></div>
+          
+        </div>
+        <div class="row">
+          
+          
+          <div class="col-md-12">
+            <hr>
+          </div>
+
+        </div>
+      
+
+        <div class="row">
+          
+          <div class="col-md-1"></div>
+          <div class="col-md-10 text-center">
+            {{grupos}}
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+        
+      
+
+
+      
+      <div align="end">
+        <br>
+        <button mat-flat-button color="basic" matStepperPrevious>Anterior</button>
+        <button mat-stroked-button color="basic" (click)="stepper.reset()">Reiniciar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+
+</div>
+<!-- <div mat-dialog-actions align="end">
+  <button mat-stroked-button color="primary" mat-dialog-close>Cancelar</button>
+  <button mat-stroked-button color="basic" mat-dialog-close cdkFocusInitial>Actualizar</button>
+</div> -->

@@ -1,0 +1,144 @@
+<!-- <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2">
+        <a routerLinkActive="active"  (click)="openDialog()">
+          <div class="text-center rounded botones">
+            <br>
+              <h2 class="text-center text-green"><i class="fa fa-briefcase" style="font-size: 42px;"></i></h2>
+              <p>Productos</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-2">
+        <a routerLinkActive="active" >
+          <div class="text-center rounded botones">
+            <br>
+              <h2 class="text-center text-blue"><i class="fa fa-tasks" style="font-size: 42px;"></i></h2>
+              <p>Sub Productos</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-2">
+        <a routerLinkActive="active">
+          <div class="text-center rounded botones">
+            <br>
+              <h2 class="text-center text-red"><i class="fa fa-cog" style="font-size: 42px;"></i></h2>
+              <p>Tipologias</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-2">
+        <a routerLinkActive="active" >
+          <div class="text-center rounded botones">
+            <br>
+              <h2 class="text-center text-teal"><i class="fa fa-upload" style="font-size: 42px;"></i></h2>
+              <p>Versiones</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-2">
+        <a routerLinkActive="active" >
+          <div class="text-center rounded botones">
+            <br>
+              <h2 class="text-center text-brown"><i class="fa fa-bars" style="font-size: 42px;"></i></h2>
+              <p>Reglas</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-1"></div>
+
+    </div>
+
+
+  </div>
+  <div class="col-md-1"></div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-5">
+    <mat-form-field appearance="outline">
+      <mat-label>Seleccionar productos</mat-label>
+      <mat-select placeholder="Ciudad" [(ngModel)]="producto" VALUE="PRODUCTO">
+        <mat-option *ngFor="let e of lstMaestro" value="{{e.id}}">{{e.nombre}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>business_center</mat-icon>
+
+    </mat-form-field>
+  </div>
+  <div class="col-md-2">
+    <div class="asistente-button-container">
+      
+      <button mat-button color="primary" (click)="openDialog()"> 
+        <mat-icon>add</mat-icon> Asistente de configuración
+      </button>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<!-- <div class="container">
+  <h5>{{producto}}</h5>
+</div> -->
+<div class="container">
+  <br>
+  <app-tabla API="{{producto}}"></app-tabla>
+  <br>
+</div>
+
+<!-- 
+<mat-tab-group (selectedIndexChange)="seleccionNavegacion($event)">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">tag</mat-icon>
+      Producto
+    </ng-template>
+    <div class="container">
+      <br>
+      
+      <app-tabla></app-tabla>
+      <br>
+      <br>
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon primary">list</mat-icon>
+      Contenido
+    </ng-template>
+    <div class="container">
+      <br>
+      
+    </div>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">article</mat-icon>
+      Sistemas
+    </ng-template>
+    <div class="container">
+      <br>
+    
+    </div>
+  </mat-tab>
+
+</mat-tab-group> -->
+
+
+
+<ng-template #hechicero let-modal>
+  <app-hechicero></app-hechicero>
+</ng-template>

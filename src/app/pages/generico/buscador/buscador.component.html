@@ -1,0 +1,190 @@
+<ngx-ui-loader [loaderId]="'loader-buscar'"></ngx-ui-loader>
+<div class="container mb-5">
+  <!-- <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10 text-center">
+
+      <div class="row text-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-2 cardround" *ngFor="let item of SubMenu">
+          <a routerLinkActive="active" [routerLink]="[item.url]">
+            <div class="text-center botones">
+              <br>
+              <h2 class="text-center  {{item.color}}"><i class="{{item.icono}}" style="font-size: 42px;"></i>
+              </h2>
+              <p>{{item.nombre}}</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+
+    </div>
+
+    <div class="col-md-1"></div>
+
+  </div> -->
+  <br>
+  <div class="row">
+    <div class="col-md-3 text-right">
+
+    </div>
+    <div class="col-md-6 text-center">
+      
+      <h2 class="text-warning mb-0" style="font-size:32px">Code Epic Technologies</h2>
+      <br>
+      <form class="navbar-search">
+        <div class="form-group" [ngClass]="{ 'focused': focus === true }">
+          <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-search "></i></span>
+            </div>
+            <input class="form-control" placeholder="Buscar" type="text" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="buscar" (focus)="focus = true" (blur)="focus = false" (keypress)="Consultar($event)">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-sliders"></i></span>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+
+  </div>
+
+
+  <mat-tab-group *ngIf="blBuscar" (selectedIndexChange)="seleccionNavegacion($event)">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">search</mat-icon>
+        Todos los documentos
+      </ng-template>
+      <div class="container">
+        <br>
+        <small class="mr-5" style="font-size: 14px;" *ngIf="blBuscar">
+          Cerca de {{cantidad | number }} resultados...
+        </small>
+        <br>
+        <!-- <div class="row enlace" *ngFor="let e of lst">
+          <div class="col-md-10">
+            <a (click)="AgregarView(e.score,e.id, indice, e.skey, e.meta.ref, e.tipo);">{{ e.skey }} - {{
+              e.titu }} </a> <br>
+            <p id="{{ e.skey }}">{{ e.subt }}<br>
+              {{ e.resu }}<br>
+              <small class=" mr-4"><i class="fa fa-globe"></i>&nbsp; Visitaste esta página {{ e.view }}
+                veces</small>
+              <small class=" mr-4"><i class="fa fa-calendar"></i>&nbsp; Última visita: {{ e.fech }}</small>
+              <small class=" mr-4"><i class="fa fa-map-pin"></i>&nbsp; {{ e.ubic }}</small>
+            </p>
+          </div>
+          <div class="col-md-2"></div>
+        </div> -->
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon primary">list</mat-icon>
+        Expedientes
+      </ng-template>
+      <div class="container">
+        <br>
+        <small class="mr-5" style="font-size: 14px;" *ngIf="blBuscar">
+          Cerca de {{cantidad | number }} resultados...
+        </small>
+        <br>
+        <!-- <div class="row enlace" *ngFor="let e of lst">
+          <div class="col-md-10">
+            <a (click)="AgregarView(e.score,e.id, indice, e.skey, e.meta.ref, e.tipo);">{{ e.skey }} - {{
+              e.titu
+              }} </a> <br>
+            <p id="{{ e.skey }}">{{ e.subt }}<br>
+              {{ e.resu }}<br>
+              <small class=" mr-4"><i class="fa fa-globe"></i>&nbsp; Visitaste esta página {{ e.view }}
+                veces</small>
+              <small class=" mr-4"><i class="fa fa-calendar"></i>&nbsp; Última visita: {{ e.fech }}</small>
+              <small class=" mr-4"><i class="fa fa-map-pin"></i>&nbsp; {{ e.ubic }}</small>
+            </p>
+          </div>
+          <div class="col-md-2"></div>
+        </div> -->
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">article</mat-icon>
+        Articulos
+      </ng-template>
+      <div class="container">
+        <br>
+        <small class="mr-5" style="font-size: 14px;" *ngIf="blBuscar">
+          Cerca de {{cantidad | number }} resultados...
+        </small>
+        <br>
+        <!-- <div class="row enlace" *ngFor="let e of lst">
+          <div class="col-md-10">
+            <a (click)="AgregarView(e.score,e.id, indice, e.skey, e.meta.ref, e.tipo);">{{ e.skey }} - {{
+              e.titu
+              }} </a> <br>
+            <p id="{{ e.skey }}">{{ e.subt }}<br>
+              {{ e.resu }}<br>
+              <small class=" mr-4"><i class="fa fa-globe"></i>&nbsp; Visitaste esta página {{ e.view }}
+                veces</small>
+              <small class=" mr-4"><i class="fa fa-calendar"></i>&nbsp; Última visita: {{ e.fech }}</small>
+              <small class=" mr-4"><i class="fa fa-map-pin"></i>&nbsp; {{ e.ubic }}</small>
+            </p>
+          </div>
+          <div class="col-md-2"></div>
+        </div> -->
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+  <!-- <hr style="margin-top:5px; margin-bottom:5px"> -->
+
+
+
+  <br><br>
+  <div class="row">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6 text-center">
+      <nav aria-label="Page navigation example" *ngIf="blBuscar">
+
+        <div class="row">
+          <div class="col-md-1">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" *ngIf="antes" (click)="posicion(actual-1)">
+                  < </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-10">
+            <ul class="pagination justify-content-center">
+              <li class="page-item" *ngFor="let e of lstPaginas">
+                <a class="page-link {{ e.color }}" (click)="posicion(e.id)">{{ e.id }}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-1">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" *ngIf="despues" (click)="posicion(actual+1)">></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </nav>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

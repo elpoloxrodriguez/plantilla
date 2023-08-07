@@ -1,0 +1,155 @@
+<div class="row">
+
+  <div class="col-md-8">
+
+    <div class="card card-profile shadow">
+      <div class="card-body">
+
+        <form>
+          <h6 class="heading-small text-muted mb-4">Información de Usuario</h6>
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field appearance="outline">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput placeholder="Nombres completo" value="{{nombrecompleto}}">
+                <mat-icon matSuffix>account_circle</mat-icon>
+
+              </mat-form-field>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Cedula</mat-label>
+                <input matInput placeholder="cedula" value="{{cedula}}">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Teléfono</mat-label>
+                <input matInput placeholder="Teléfono" value="{{telefono}}">
+                <mat-icon matSuffix>support_agent</mat-icon>
+
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Correo Electronico</mat-label>
+                <input type="email" matInput placeholder="Ejemplo: technologies@code-epic.com"  value="{{correo}}" required>
+                <mat-icon matSuffix>email</mat-icon>
+
+              </mat-form-field>
+            </div>
+          </div>
+          <hr class="my-4" />
+          <h6 class="heading-small text-muted mb-4">Información de Contacto</h6>
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field appearance="outline">
+                <mat-label>Direccion</mat-label>
+                <textarea matInput placeholder="Direccion completa" style="height: 70px;"></textarea>
+              </mat-form-field>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <mat-form-field appearance="outline">
+                <mat-label>País</mat-label>
+                <mat-select placeholder="País" >
+                  <mat-option>Selección</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>public</mat-icon>
+
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>Ciudad</mat-label>
+                <mat-select placeholder="Ciudad">
+                  <mat-option>Selección</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>home</mat-icon>
+
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Código Postal</mat-label>
+                <input matInput placeholder="Código postal" >
+                <mat-icon matSuffix>pin</mat-icon>
+
+              </mat-form-field>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card card-profile shadow">
+
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <div class="card-profile-stats d-flex justify-content-center">
+              <div>
+                <span class="heading">22</span>
+                <span class="description">Archivos</span>
+              </div>
+              <div>
+                <span class="heading">10</span>
+                <span class="description">Documentos</span>
+              </div>
+              <div>
+                <span class="heading">89</span>
+                <span class="description">Registros</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <h3>
+            {{nombre}}<span class="font-weight-light"></span>
+          </h3>
+          <div class="h5 font-weight-300">
+            <i class="ni location_pin mr-2"></i>Caracas, Venezuela
+          </div>
+          <div class="h5 mt-2">
+            <i class="ni business_briefcase-24 mr-2"></i>{{perfil}}
+          </div>
+          <h6 class="heading-small text-muted mb-2">Información General</h6>
+          <div class="row text-left ">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cargo:</li>
+              <li class="list-group-item">Año de Registro:</li>
+              <li class="list-group-item">Clasificación:</li>
+              <li class="list-group-item">Último Acceso:</li>
+            </ul>
+          </div>
+          <hr class="my-3" />
+          <div class="text-center">
+            <button mat-flat-button color="primary"  (click)="openDialog()">Cambiar Contraseña</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<ng-template #cambiarClave let-modal>
+  <app-cambiarclave></app-cambiarclave>
+</ng-template>
+

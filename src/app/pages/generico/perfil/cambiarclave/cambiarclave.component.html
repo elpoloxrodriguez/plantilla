@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Cambiar clave</h2>
+<div mat-dialog-content>
+
+  <form>
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Clave actual</mat-label>
+          <input type="password" matInput placeholder="Clave actual">
+          <mat-icon matSuffix>tag</mat-icon>
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Nueva clave</mat-label>
+          <input type="password" matInput placeholder="Nueva clave">
+          <mat-icon matSuffix>key</mat-icon>
+
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Repetir clave</mat-label>
+          <input type="password" matInput placeholder="Repetir clave" required>
+          <mat-icon matSuffix>key</mat-icon>
+
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-stroked-button color="primary" mat-dialog-close>Cancelar</button>
+  <button mat-stroked-button color="basic" mat-dialog-close cdkFocusInitial>Actualizar</button>
+</div>
